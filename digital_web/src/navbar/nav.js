@@ -26,50 +26,52 @@ function Nav(){
       const drop_packages=document.getElementById("drop-packages");
       drop_packages.classList.toggle("hidden");
    }
-   let top=()=>{
-    document.body.scrollTop=0;
-    document.documentElement.scrollTop=0;
-    document.documentElement.style.scrollBehavior = "smooth";
-}
+   function top() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    } 
     return (
         <div className=" z-30 relative">
              <div  className=" bg-black text-white box-border fixed w-full">
-                <div  className=" flex justify-between ml-10 mr-10">
+                <div  className=" flex flex-row justify-between  ml-10 mr-10">
                   <HashLink to={'/#home'}>
                   <img className=" max-h-24 " src={first}></img>
                   </HashLink>
                         <div id="second" className="lg:hidden flex items-center" onClick={slide}>
                            <img className=" cursor-pointer max-h-6 " src={second}></img>
                         </div>
-                        <div className='lg:block hidden w-1/4'>
+                        <div className='lg:block  hidden '>
                           <div className=' font-bold text-xl flex flex-row gap-5 h-full items-center'>
                             <HashLink to={"/#home"} className='h-2/4 pl-1 pr-1 flex items-center hover:bg-orange-400'><p>Home</p></HashLink>
                             <div  onMouseOver={drop} onMouseOut={drop} >
                               <p id="services">Services</p>
-                                <div  onClick={top} id="drop-services" className='absolute hidden bg-black text-left pt-10 mb-4 leading-10'>
-                                  <HashLink to={"/SEO"}>
+                                <div  id="drop-services" className='absolute hidden bg-black text-left pt-10 mb-4 leading-10'>
+                                  <HashLink to={"/SEO"} onClick={()=>top()}>
                                   <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>SEO Service</p>
                                   </HashLink>
-                                  <HashLink to={"/SMM"}>
+                                  <HashLink to={"/SMM"} onClick={()=>top()}>
                                   <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>SMM Service</p>
                                   </HashLink>
-                                  <HashLink to={"/PPC"}>
+                                  <HashLink to={"/PPC"} onClick={()=>top()}>
                                   <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>PPC Service</p>
                                   </HashLink>
-                                  <HashLink  to={"/WEBSITE"}>
+                                  <HashLink  to={"/WEBSITE"} onClick={()=>top()}>
                                   <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>Website Service</p>
                                   </HashLink>
                                 </div>
                             </div>    
-                            <div  onMouseOver={down} onMouseOut={down} >
-                              <p id="packages">Packages</p>
-                                <div id="drop-packages" className='absolute hidden bg-black text-left mb-4 pt-10  leading-10'>
-                                  <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>SEO Packages</p>
-                                  <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>SMM Packages</p>
-                                  <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>PPC Packages</p>
-                                  <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>Website Packages</p>
-                                </div>
-                            </div>    
+                            <HashLink to={"/#package"}>
+                              <div  onMouseOver={down} onMouseOut={down} >
+                                <p id="packages">Packages</p>
+                                  <div id="drop-packages" className='absolute hidden bg-black text-left mb-4 pt-10  leading-10'>
+                                    <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>SEO Packages</p>
+                                    <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>SMM Packages</p>
+                                    <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>PPC Packages</p>
+                                    <p className='hover:bg-orange-400 cursor-pointer pl-2 pr-2'>Website Packages</p>
+                                  </div>
+                              </div>
+                            </HashLink>
+                                
                             
                             <HashLink className='h-2/4 pl-1 pr-1 flex items-center hover:bg-orange-400'  to={"/CONTACT"}><p>Contact</p></HashLink>
                           </div>

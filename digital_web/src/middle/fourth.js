@@ -4,10 +4,11 @@ import eight from './images/eight.jpg';
 
 import {AiOutlineArrowRight} from 'react-icons/ai';
 import fifth from './images/fifth.png';
-function Fourth(){
+
+function  Fourth(){
     return(
         <div className=" bg-orange-400 ">
-            <div className='lg:flex lg:flex-row flex-col pl-10 pr-10'>
+            <div className='lg:flex lg:flex-row flex-col pl-8 pr-8 pb-10' >
                 <div >
                     <h1 className="pt-10 text-white text-2xl font-bold font mb-2">Creation & Innovation</h1>
                     <div className="text-white text-left leading-5 pl-6 pr-6 font-sans font-semibold">
@@ -26,18 +27,18 @@ function Fourth(){
                     </div>
                 </div>
                 
-                <div className='bg-white p-10 flex justify-center lg:bg-orange-400'>
+                <div className='bg-white pb-5 flex justify-center lg:bg-orange-400'>
                     <div className=' w-2/4 lg:w-full'>
                         <img src={fifth}></img>
                     </div>
                 </div>
             </div>
             
-            <div className=' bg-gray-200 p-16 '>
+            <div className=' bg-gray-200 sm:p-16 '>
                 <div>
                 <h1 className='pb-5 font-bold text-2xl'>Our Blogs</h1>
-                <div className='flex flex-col md:flex-row'>
-                    <div className='md:mr-4 hover:scale-110 duration-200 text-left border-2 mb-5 p-3 border-gray-300'>
+                <div className='flex flex-col md:flex-row  items-center'>
+                    <div className='md:mr-4  w-3/4 sm:w-full hover:scale-110 duration-200 text-left border-2 mb-5 p-3 border-gray-300'>
                         <div>
                             <img src={sixth}></img>
                         </div>
@@ -50,7 +51,7 @@ function Fourth(){
                                 </button>
                         </div>    
                     </div>
-                    <div className='md:mr-4 hover:scale-110 duration-200 text-left border-2 mb-5 p-3 border-gray-300'>
+                    <div className='md:mr-4 w-3/4 sm:w-full hover:scale-110 duration-200 text-left border-2 mb-5 p-3 border-gray-300'>
                         <div>
                             <img src={seventh}></img>
                         </div>
@@ -63,7 +64,7 @@ function Fourth(){
                                 </button>
                         </div>    
                     </div>
-                    <div className='md:mr-4 hover:scale-110 duration-200 text-left border-2 mb-5 p-3 border-gray-300'>
+                    <div className='md:mr-4 w-3/4 sm:w-full hover:scale-110 duration-200 text-left border-2 mb-5 p-3 border-gray-300'>
                         <div>
                             <img src={eight}></img>
                         </div>

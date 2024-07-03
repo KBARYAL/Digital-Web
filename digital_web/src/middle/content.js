@@ -8,27 +8,31 @@ import Third from './third.js';
 import Fourth from './fourth.js';
 import { HashLink } from 'react-router-hash-link';
 function Content(){ 
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      } 
     return(
-        <div id="home" className='fle flex-col pt-32 bg-gray-200'> 
-                <div className='flex justify-center '>
+        <div id="home" className='fle flex-col pt-16 bg-gray-200'> 
+                <div className='flex justify-center pt-20 '>
                     <img className=' w-64' src={first}></img>
                 </div>
-                <div className='pt-4 pb-16  '>
-                    <p className='mb-3 ml-5 mr-5 text-3xl font-sans font-light text-center'>
+                <div className='pt-16 pb-32  '>
+                    <p className='mb-3 ml-5 mr-5 text-4xl font-sans font-light text-center'>
                     Without Digital Marketing Your Business Resemble This Car
                     </p>
-                    <p className=' mb-3 ml-5 mr-5 text-2xl font-sans font-light text-center '>
+                    <p className=' mb-3 ml-5 mr-5 text-3xl font-sans font-light text-center '>
                     Lift your business to new heights with our
                      <span className=' text-orange-500'> digital marketing services.</span>
                     </p>
-                    <p  className='mb-8 ml-5 mr-5 text-2xl font-sans font-light text-center '>
+                    <p  className='mb-8 ml-5 mr-5 text-3xl font-sans font-light text-center '>
                         Converting visitors into customers is the name of our game.
                     </p>
-                    <HashLink to={'/#services'}>
-                        <button className=" p-1 text-2xl mr-8 bg-black text-white rounded-sm">Services</button>
+                    <HashLink to={'/#service'}>
+                        <button className=" p-1 text-2xl mr-8 bg-black text-white rounded-lg font-semibold hover:scale-105">Services</button>
                     </HashLink>
                     <HashLink to={'/#package'}>
-                        <button className="p-1 text-2xl bg-orange-400 text-white rounded-sm">Packages</button>
+                        <button className="p-1 text-2xl bg-orange-400 text-white rounded-lg font-semibold hover:scale-105">Packages</button>
                     </HashLink>
                 </div>
 
@@ -64,9 +68,9 @@ function Content(){
 
 
 
-                     <div id="services" className='pt-16 font-sans font-bold text-2xl'>
+                     <div id="service" className='pt-32 font-sans font-bold text-2xl'>
                          <h1 >Services We Offer</h1>
-                         <div className='flex flex-col md:flex-row'>
+                         <div className='flex flex-col md:flex-row gap-8'>
                          <div className='md:flex-1 shadow-gray-700 shadow-sm  duration-200  hover:scale-105 hover:border-yellow-500 flex flex-col border-gray-600 border-2 ml-10 mr-10 md:mr-0 pt-10 mt-10 pb-10'>
                                 <div className='flex justify-center text-yellow-400 mb-5 text-4xl'>
                                     <BiGlobe/>
@@ -74,10 +78,14 @@ function Content(){
                                 <h2 className='text-xl mb-5'>SEO</h2>
                                 <p className='text-xl font-light text-gray-600 mb-10'>Search Engine Optimization Service</p>
                                 <div className='flex justify-center'>
-                                    <button className='hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
-                                        <p>Get Started</p> 
+                                    
+                                    <HashLink to="/SEO" onClick={()=>topFunction()}> 
+                                        <button className='hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
+                                        <p>Get Started</p>
+                                        </button>
+                                    </HashLink>
                                         <AiOutlineArrowRight/>
-                                    </button>
+                                    
                                 </div>
                              </div>
                         
@@ -89,7 +97,11 @@ function Content(){
                                     <p className='text-xl font-light text-gray-600 mb-10'>Pay-Per-Click Service</p>
                                     <div className='flex justify-center'>
                                         <button className='md:mt-7 hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
-                                        <p>Get Started</p> 
+                                        <HashLink to="/PPC" onClick={()=>topFunction()}> 
+                                        <button className='hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
+                                        <p>Get Started</p>
+                                        </button>
+                                        </HashLink>
                                         <AiOutlineArrowRight/>
                                         </button>
                                     </div>
@@ -104,7 +116,11 @@ function Content(){
                                 <p className='text-xl font-light text-gray-600 mb-10'>Social Media Marketing Service</p>
                                 <div className='flex justify-center'>
                                     <button className='md:mt-7 hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
-                                    <p>Get Started</p> 
+                                    <HashLink to="/SMM" onClick={()=>topFunction()}> 
+                                        <button className='hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
+                                        <p>Get Started</p>
+                                        </button>
+                                    </HashLink> 
                                     <AiOutlineArrowRight/>
                                     </button>
                                 </div>
@@ -119,7 +135,11 @@ function Content(){
                                 <p className='text-xl font-light text-gray-600 mb-10'>Design & Development Service</p>
                                 <div className='flex justify-center'>
                                     <button className='hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
-                                    <p>Get Started</p> 
+                                    <HashLink to="/WEBSITE" onClick={()=>topFunction()}> 
+                                        <button className='hover:bg-blue-400 hover:text-white flex flx-row items-center p-2 rounded-md border-gray-600 border-2 text-xl font-light text-gray-600'>
+                                        <p>Get Started</p>
+                                        </button>
+                                    </HashLink> 
                                     <AiOutlineArrowRight/>
                                     </button>
                                 </div>
